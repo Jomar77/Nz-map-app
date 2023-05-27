@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
 import MapPage from "./pages/MapPage";
 import NoPage from "./pages/NoPage";
 
@@ -12,11 +10,8 @@ function App() {
       <div id="ezoic-pub-ad-placeholder-110"> </div>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="map" element = {<MapPage />} />
+          <Route index element={<MapPage />} />
           <Route path="*" element={<NoPage />} />
-        </Route>
       </Routes>
     </BrowserRouter>
       {/*<div className="Map-container">

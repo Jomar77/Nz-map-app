@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import PhilippinesMapJSX from '../PhilippinesMapJSX';
+import NZMapJSX from '../NZMapJSX';
 import ".././App.css";
 
-const PhilippinesMap = () => {
+const NZMap = () => {
   const [provinceLevels] = useState([]);
   const [selectedProvince, setSelectedProvince] = useState(null);
   const [selectedProvinceLayer, setSelectedProvinceLayer] = useState(null);
@@ -10,7 +10,6 @@ const PhilippinesMap = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [totalLevel, setTotalLevel] = useState(0);
 
-  const searchUrl = 'http://www.google.com/search?q="' + selectedProvince + ', Philippines"';
 
   const menuOptions = [
     { label: 'Lived there', level: 5, fill: '#e84c3d' },
@@ -40,7 +39,7 @@ const PhilippinesMap = () => {
 
   return (
     <div>
-      <PhilippinesMapJSX
+      <NZMapJSX
         setSelectedProvince={setSelectedProvince}
         setMenuPosition={setMenuPosition}
         setMenuVisible={setMenuVisible}
@@ -56,7 +55,6 @@ const PhilippinesMap = () => {
             left: menuPosition.x,
           }} >
           <div>
-            <div className='menu-header' onClick={() => window.open(searchUrl)}>{selectedProvince} ↗ </div>
             {menuOptions.map(({ label, level }) => (
               <div key={level}
                 level={level}
@@ -72,4 +70,4 @@ const PhilippinesMap = () => {
   );
 };
 
-export default PhilippinesMap;
+export default NZMap;
