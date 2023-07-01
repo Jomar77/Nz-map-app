@@ -35,7 +35,7 @@ function MapPage() {
             </section>
 
     <section className="donate">
-    Soon to be updated if sisipagin tsaka may pera . I hope you enjoyed! *Heavily* based from <div className="link" onClick={() => window.open('https://www.my-philippines-travel-level.com/')}>Denz's Project↗</div>. 
+    Soon to be updated if sisipagin tsaka may pera :D. I hope you enjoyed! *Heavily* based from <div className="link" onClick={() => window.open('https://www.my-philippines-travel-level.com/')}>Denz's Project↗</div>. 
 
     <br></br>
     <br></br>
