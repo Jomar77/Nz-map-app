@@ -10,7 +10,6 @@ const NZMap = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [totalLevel, setTotalLevel] = useState(0);
 
-
   const menuOptions = [
     { label: 'Lived there', level: 5, fill: '#e84c3d' },
     { label: 'Stayed there', level: 4, fill: '#d58337' },
@@ -22,8 +21,7 @@ const NZMap = () => {
 
   const handleLevelClick = (selectedProvince, selectedProvinceLayer, event) => {
     const newLevel = parseInt(event.target.getAttribute('level'));
-    const provinceIndex = provinceLevels
-      .findIndex((province) => province.id === selectedProvince);
+    const provinceIndex = provinceLevels.findIndex((province) => province.id === selectedProvince);
     if (provinceIndex !== -1) {
       provinceLevels[provinceIndex].level = newLevel;
     } else {
@@ -49,17 +47,20 @@ const NZMap = () => {
       {menuVisible && (
         <div
           className='level-menu'
-          style={{
-            position: 'absolute',
-            top: menuPosition.y,
-            left: menuPosition.x,
-          }} >
+          style={
+            selectedProvince === 'Marlborough District'
+              ? { position: 'absolute', top: '10px', right: menuPosition.x } // Top right for "west coast"
+              : { position: 'absolute', top: menuPosition.y, left: menuPosition.x }
+          }
+        >
           <div>
             {menuOptions.map(({ label, level }) => (
-              <div key={level}
+              <div
+                key={level}
                 level={level}
                 className={`level-${level}`}
-                onClick={(event) => handleLevelClick(selectedProvince, selectedProvinceLayer, event)}>
+                onClick={(event) => handleLevelClick(selectedProvince, selectedProvinceLayer, event)}
+              >
                 {label}
               </div>
             ))}
