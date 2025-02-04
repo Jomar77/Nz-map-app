@@ -32,7 +32,10 @@ body {
   background-color: #9dc3fb;
   width: 100dvw;
   height: 100dvh;
- display: table-cell;
+  display: table-cell;
+  transform: scale(1); /* Adjust scale as needed */
+  transform-origin: top center; /* Keeps map anchored at the top */
+  overflow: hidden; /* Prevents overflow */
 }
 
 .Map-padding {

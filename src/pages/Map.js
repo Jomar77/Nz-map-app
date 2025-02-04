@@ -48,9 +48,7 @@ const NZMap = () => {
         <div
           className='level-menu'
           style={
-            selectedProvince === 'Marlborough District'
-              ? { position: 'absolute', top: '10px', right: menuPosition.x } // Top right for "west coast"
-              : { position: 'absolute', top: menuPosition.y, left: menuPosition.x }
+            { position: 'absolute', top: menuPosition.y, left: menuPosition.x }
           }
         >
           <div>
